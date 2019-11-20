@@ -1,0 +1,16 @@
+{
+    "tenancy_ocid": "ocid1.tenancy.oc1..aaaaaaaa...",
+	"compartment_ocid": "ocid1.compartment.oc1..aaaaaaaa...",
+    "user_ocid": "ocid1.user.oc1..aaaaaaaa...",
+ 	"fingerprint": "c9:61:9f:48:f0:bc:...",
+	"key_file": "/path/to/privatekey.pem",
+	"region": "eu-frankfurt-1",
+	"base_image_ocid": "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa",
+	"image_name": "Bind-DNS-FWD",
+	"availability_domain": "NExx:EU-FRANKFURT-1-AD-1 <get your exact AD name here>",
+	"shape": "VM.Standard2.1 <build VM shape>",
+	"ssh_username": "opc",
+	"subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaa <a subnet used to deploy the build VM>",
+	"Terraformed": "yes",
+	"HashiPacked": "yes"
+}

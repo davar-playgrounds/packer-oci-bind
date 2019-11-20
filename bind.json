@@ -1,0 +1,58 @@
+{
+  "variables": {
+    "tenancy_ocid": "null",
+	"compartment_ocid": "null",
+    "user_ocid": "null",
+ 	"fingerprint": "null",
+	"key_file": "null",
+	"region": "null",
+	"base_image_ocid": "null",
+	"image_name": "Bind-DNS-FWD",
+	"availability_domain": "null",
+	"shape": "null",
+	"ssh_username": "null",
+	"subnet_ocid": "null",
+	"Terraformed": "no",
+	"HashiPacked": "yes"
+  },
+  "builders": [
+    {
+	  "user_ocid":"{{user `user_ocid`}}",
+      "tenancy_ocid": "{{user `tenancy_ocid`}}",
+      "fingerprint":"{{user `fingerprint`}}",
+      "key_file":"{{user `key_file`}}",
+      "availability_domain": "{{user `availability_domain`}}",
+      "region": "{{user `region`}}",
+      "base_image_ocid": "{{user `base_image_ocid`}}",
+      "compartment_ocid": "{{user `compartment_ocid`}}",
+      "image_name": "{{user `image_name`}}",
+      "shape": "{{user `shape`}}",
+      "ssh_username": "{{user `ssh_username`}}",
+      "subnet_ocid": "{{user `subnet_ocid`}}",
+      "type": "oracle-oci",
+	  "tags":{
+        "Terraformed": "{{user `Terraformed`}}",
+        "HashiPacked": "{{user `HashiPacked`}}"
+		}
+    }
+  ],
+  "provisioners": [
+ 	{
+	  "type": "file",
+	  "source": "named.conf",
+      "destination": "~/named.conf"
+	},
+    {
+      "type": "shell",
+      "inline": [
+	    "sleep 30"
+	  ]
+    },
+    {
+      "type": "shell",
+      "scripts": [
+        "./install-bind.sh"
+      ]
+    }
+  ]
+}
