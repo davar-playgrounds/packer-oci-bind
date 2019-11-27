@@ -15,7 +15,8 @@ Packer will execute the following actions :
 - Execute the *builders* section of *bind.json*,
   - it creates a build VM using the informations you provided in *variables.json*,
 - Execute the *provisioners* section of *bind.json*,
-  - it executes the *install-bind.sh* script
+  - copy configuration files,
+  - executes the *install-bind.sh* script.
 - Export the built VM to an OCI Custom Image,
 - Delete the Build VM.
 
